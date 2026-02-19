@@ -1,0 +1,105 @@
+/* الفاتورة الثانية - قالب فاتورة الضريبة */
+@page page-2 {
+  size: 9in 10.5in;
+  margin: 0;
+}
+
+.print-page-2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.page-2 {
+  position: relative;
+  width: 9in;
+  height: 10.5in;
+  background-image: url('/template2.png');
+  /* تكبير القالب لتقليص المسافة الفارغة في الهيدر والفوتر */
+  background-size: 100% 118%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  page-break-after: always;
+  break-after: page;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  page: page-2;
+}
+
+.print-page-2 .field {
+  position: absolute;
+  font-family: Arial, sans-serif;
+  font-size: 10pt;
+  color: #000;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: visible;
+}
+
+.print-page-2 .chassis-field {
+  font-family: 'Courier New', monospace;
+  font-size: 10.5pt;
+  white-space: pre-line;
+  overflow: visible;
+  font-weight: bold;
+}
+
+.print-page-2 .net-due-field {
+  font-weight: bold;
+  font-size: 11pt;
+}
+
+.print-page-2 .showroom-name-field {
+  font-weight: bold;
+}
+
+/* Print styles */
+@media print {
+  .print-page-2 {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    page-break-after: always;
+    break-after: page;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .print-page-2:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  .page-2 {
+    width: 9in;
+    height: 10.5in;
+    box-shadow: none;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    page-break-after: always;
+    break-after: page;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page-2:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  .print-page-2 .field {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
