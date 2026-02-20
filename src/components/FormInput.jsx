@@ -192,27 +192,11 @@ function FormInput({ formData, onInputChange, onChassisAdd, onChassisRemove, onC
       <div className="form-section">
         <h2>معلومات المركبة</h2>
         <div className="form-group">
-          <label>العلامة التجارية</label>
-          <input
-            type="text"
-            value={formData.brand}
-            onChange={(e) => onInputChange('brand', e.target.value)}
-          />
-        </div>
-        <div className="form-group">
           <label>الموديل</label>
           <input
             type="text"
             value={formData.model}
             onChange={(e) => onInputChange('model', e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label>الفئة / الدرجة</label>
-          <input
-            type="text"
-            value={formData.trim}
-            onChange={(e) => onInputChange('trim', e.target.value)}
           />
         </div>
         <div className="form-group">
@@ -503,12 +487,28 @@ function FormInput({ formData, onInputChange, onChassisAdd, onChassisRemove, onC
             </button>
           </div>
           <div className="coordinates-content">
-            <div style={{ marginBottom: '15px' }}>
+            <div style={{ marginBottom: '15px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
               <button 
                 onClick={onResetCoordinates2}
                 className="reset-coordinates-btn"
               >
                 🔄 إعادة تعيين
+              </button>
+              <button 
+                type="button"
+                className="reset-coordinates-btn"
+                onClick={() => {
+                  const lines = Object.entries(fields2).map(([key, v]) => {
+                    const parts = [`top: '${v.top}'`, `left: '${v.left}'`, `width: '${v.width}'`, `align: '${v.align || 'left'}'`]
+                    if (v.rtl) parts.push('rtl: true')
+                    if (v.multiline) parts.push('multiline: true')
+                    return `    ${key}: { ${parts.join(', ')} }`
+                  })
+                  const text = `  const defaultFields2 = {\n${lines.join(',\n')}\n  }`
+                  navigator.clipboard.writeText(text).then(() => alert('تم نسخ إحداثيات الصفحة الثانية للحافظة. الصقها في App.jsx مكان defaultFields2.'))
+                }}
+              >
+                📋 نسخ للإضافة في الكود
               </button>
             </div>
             <div className="coordinates-editor" style={{ maxHeight: 'none', overflowY: 'visible' }}>

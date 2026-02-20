@@ -8,9 +8,7 @@ import './App.css'
 function App() {
   const [formData, setFormData] = useState({
     // Vehicle Info
-    brand: '',
     model: '',
-    trim: '',
     year: '',
     color: '',
     
@@ -20,9 +18,9 @@ function App() {
     
     // Pricing
     vehiclePrice: '',
-    salesSupport: '-950',
-    financialSupportPercent: '0', // نسبة الدعم المالي: 0%, 3%, 5%, 6%, 11%, 19%
-    registrationFees: '500',
+    salesSupport: '-0',
+    financialSupportPercent: '6', // نسبة الدعم المالي: 0%, 3%, 5%, 6%, 11%, 19%
+    registrationFees: '400',
     downPayment: '0',
     
     // Supplier Info
@@ -65,24 +63,24 @@ function App() {
 
   // إحداثيات الفاتورة الثانية (سنابل الحديثة - VEHICLE VAT INVOICE)
   const defaultFields2 = {
-    documentNo: { top: '18%', left: '80%', width: '12%', align: 'left' },
-    pageNo: { top: '20.5%', left: '80%', width: '12%', align: 'left' },
-    date: { top: '23%', left: '80%', width: '18%', align: 'left' },
-    customerRef: { top: '25.5%', left: '80%', width: '15%', align: 'left' },
-    showroomName: { top: '20%', left: '8%', width: '58%', align: 'right', rtl: true },
-    vehicleDescription: { top: '35%', left: '8%', width: '58%', align: 'right', rtl: true },
-    color: { top: '38.5%', left: '8%', width: '40%', align: 'right', rtl: true },
-    chassis: { top: '42%', left: '8%', width: '50%', align: 'right', multiline: true },
-    vehiclePrice: { top: '48%', left: '48%', width: '14%', align: 'right' },
-    vat15: { top: '48%', left: '65%', width: '12%', align: 'right' },
-    amount: { top: '48%', left: '80%', width: '14%', align: 'right' },
-    subsidyPercent: { top: '52%', left: '12%', width: '12%', align: 'left' }, // نسبة الدعم المالي بجانب «دعم مالي»
-    priceExclVat: { top: '58%', left: '75%', width: '18%', align: 'right' },
-    vatAmount: { top: '61%', left: '75%', width: '18%', align: 'right' },
-    netIncVat: { top: '67%', left: '75%', width: '18%', align: 'right' },
-    registrationFees: { top: '70%', left: '75%', width: '18%', align: 'right' },
-    downPayment: { top: '73%', left: '75%', width: '18%', align: 'right' },
-    netDue: { top: '76%', left: '75%', width: '18%', align: 'right' }
+    documentNo: { top: '22.7%', left: '68%', width: '12%', align: 'center' },
+    pageNo: { top: '25.8%', left: '68%', width: '12%', align: 'center' },
+    date: { top: '28.8%', left: '65%', width: '18%', align: 'center' },
+    customerRef: { top: '25.5%', left: '80%', width: '15%', align: 'center' },
+    showroomName: { top: '37%', left: '45%', width: '58%', align: 'center', rtl: true },
+    vehicleDescription: { top: '44%', left: '20.1%', width: '58%', align: 'center', rtl: true },
+    color: { top: '46.3%', left: '28.9%', width: '40%', align: 'center', rtl: true },
+    chassis: { top: '48.5%', left: '24.2%', width: '50%', align: 'center', multiline: true },
+    vehiclePrice: { top: '55%', left: '39.6%', width: '14%', align: 'center' },
+    vat15: { top: '55%', left: '58.4%', width: '12%', align: 'center' },
+    amount: { top: '55%', left: '76%', width: '14%', align: 'center' },
+    subsidyPercent: { top: '58%', left: '32%', width: '12%', align: 'center' },
+    priceExclVat: { top: '58.3%', left: '65%', width: '18%', align: 'center' },
+    vatAmount: { top: '61.2%', left: '65%', width: '18%', align: 'center' },
+    netIncVat: { top: '66.7%', left: '65%', width: '18%', align: 'center' },
+    registrationFees: { top: '64.1%', left: '65%', width: '18%', align: 'center' },
+    downPayment: { top: '69.5%', left: '65%', width: '18%', align: 'center' },
+    netDue: { top: '71.9%', left: '65%', width: '18%', align: 'center' }
   }
 
   const [fields, setFields] = useState(() => {
