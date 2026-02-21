@@ -228,6 +228,15 @@ function FormInput({ formData, onInputChange, onChassisAdd, onChassisRemove, onC
           />
         </div>
         <div className="form-group">
+          <label>اسم العميل</label>
+          <input
+            type="text"
+            value={formData.customerName}
+            onChange={(e) => onInputChange('customerName', e.target.value)}
+            placeholder="يظهر في الصفحة الثانية فقط"
+          />
+        </div>
+        <div className="form-group">
           <label>جهة التعميد / اسم البنك</label>
           <input
             type="text"
@@ -349,22 +358,22 @@ function FormInput({ formData, onInputChange, onChassisAdd, onChassisRemove, onC
         </div>
       </div>
 
-      <button type="button" className="toggle-coordinates-btn" onClick={(e) => {
-        e.stopPropagation()
-        const newState = !showCoordinates
-        setShowCoordinates(newState)
-        localStorage.setItem('showCoordinates', JSON.stringify(newState))
-      }}>
-        {showCoordinates ? '🔽 إخفاء إحداثيات الصفحة الأولى' : '⚙️ إظهار إحداثيات الصفحة الأولى'}
-      </button>
-
       <button type="button" className="toggle-coordinates-btn toggle-coordinates-btn-2" onClick={(e) => {
         e.stopPropagation()
         const newState = !showCoordinates2
         setShowCoordinates2(newState)
         localStorage.setItem('showCoordinates2', JSON.stringify(newState))
       }}>
-        {showCoordinates2 ? '🔽 إخفاء إحداثيات الصفحة الثانية' : '⚙️ إظهار إحداثيات الصفحة الثانية'}
+        {showCoordinates2 ? '🔽 إخفاء إحداثيات الصفحة الأولي' : '⚙️ إظهار إحداثيات الصفحة الأولي'}
+      </button>
+
+      <button type="button" className="toggle-coordinates-btn" onClick={(e) => {
+        e.stopPropagation()
+        const newState = !showCoordinates
+        setShowCoordinates(newState)
+        localStorage.setItem('showCoordinates', JSON.stringify(newState))
+      }}>
+        {showCoordinates ? '🔽 إخفاء إحداثيات الصفحة الثانية' : '⚙️ إظهار إحداثيات الصفحة الثانية'}
       </button>
 
       {showCoordinates && createPortal(

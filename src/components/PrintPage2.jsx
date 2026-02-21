@@ -105,6 +105,22 @@ function PrintPage2({ formData, pricing, fields, chassisNumber, pageNumber, docu
           </div>
         )}
 
+        {/* Customer Name - اسم العميل (الصفحة الثانية فقط) */}
+        {formData.customerName && fields?.customerName && (
+          <div 
+            className="field customer-name-field"
+            style={{
+              top: fields.customerName.top,
+              left: fields.customerName.left,
+              width: fields.customerName.width,
+              textAlign: fields.customerName.align,
+              direction: fields.customerName.rtl ? 'rtl' : 'ltr'
+            }}
+          >
+            {formData.customerName}
+          </div>
+        )}
+
         {/* Vehicle Description */}
         {vehicleDescription && fields?.vehicleDescription && (
           <div 

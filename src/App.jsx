@@ -14,6 +14,7 @@ function App() {
     
     // Buyer Info
     showroomName: '',
+    customerName: '', // اسم العميل (يظهر في الصفحة الثانية فقط)
     bankName: '', // جهة التعميد
     
     // Pricing
@@ -68,6 +69,7 @@ function App() {
     date: { top: '28.8%', left: '65%', width: '18%', align: 'center' },
     customerRef: { top: '25.5%', left: '80%', width: '15%', align: 'center' },
     showroomName: { top: '37%', left: '45%', width: '58%', align: 'center', rtl: true },
+    customerName: { top: '79%', left: '48.5%', width: '58%', align: 'center', rtl: true },
     vehicleDescription: { top: '44%', left: '20.1%', width: '58%', align: 'center', rtl: true },
     color: { top: '46.3%', left: '28.9%', width: '40%', align: 'center', rtl: true },
     chassis: { top: '48.5%', left: '24.2%', width: '50%', align: 'center', multiline: true },
@@ -227,18 +229,18 @@ function App() {
 
             return (
               <Fragment key={index}>
-                <PrintPage
-                  formData={formData}
-                  pricing={pricing}
-                  fields={fields}
-                  chassisNumber={chassisNumber}
-                  pageNumber={page1}
-                  documentNumber={documentNumber}
-                />
                 <PrintPage2
                   formData={formData}
                   pricing={pricing2}
                   fields={fields2}
+                  chassisNumber={chassisNumber}
+                  pageNumber={page1}
+                  documentNumber={documentNumber}
+                />
+                <PrintPage
+                  formData={formData}
+                  pricing={pricing}
+                  fields={fields}
                   chassisNumber={chassisNumber}
                   pageNumber={page2}
                   documentNumber={documentNumber}
@@ -248,18 +250,18 @@ function App() {
           })
         ) : (
           <>
-            <PrintPage
-              formData={formData}
-              pricing={pricing}
-              fields={fields}
-              chassisNumber={null}
-              pageNumber={1}
-              documentNumber={formData.documentNo ? parseInt(formData.documentNo) || 1 : 1}
-            />
             <PrintPage2
               formData={formData}
               pricing={pricing2}
               fields={fields2}
+              chassisNumber={null}
+              pageNumber={1}
+              documentNumber={formData.documentNo ? parseInt(formData.documentNo) || 1 : 1}
+            />
+            <PrintPage
+              formData={formData}
+              pricing={pricing}
+              fields={fields}
               chassisNumber={null}
               pageNumber={2}
               documentNumber={formData.documentNo ? parseInt(formData.documentNo) || 1 : 1}
