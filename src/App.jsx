@@ -15,6 +15,8 @@ function App() {
     // Buyer Info
     showroomName: '',
     customerName: '', // اسم العميل (يظهر في الصفحة الثانية فقط)
+    customerPhone: '', // رقم الجوال (يظهر في الصفحة الأولى فقط)
+    employeeNumber: '', // الرقم الوظيفي (يظهر في الصفحة الأولى فقط)
     bankName: '', // جهة التعميد
     
     // Pricing
@@ -40,6 +42,7 @@ function App() {
 
   // Load coordinates from localStorage or use defaults
   // These are the saved coordinates from localStorage
+  // إحداثيات الصفحة الثانية (التي تظهر تحت - الزر السفلي)
   const defaultFields = {
     documentNo: { top: '19.9%', left: '72%', width: '8%', align: 'center' },
     pageNo: { top: '22.8%', left: '72%', width: '8%', align: 'center' },
@@ -62,13 +65,14 @@ function App() {
     netDue: { top: '76%', left: '66%', width: '20%', align: 'center' }
   }
 
-  // إحداثيات الفاتورة الثانية (سنابل الحديثة - VEHICLE VAT INVOICE)
+  // إحداثيات الصفحة الأولى (التي تظهر فوق - الزر العلوي)
   const defaultFields2 = {
     documentNo: { top: '22.7%', left: '68%', width: '12%', align: 'center' },
     pageNo: { top: '25.8%', left: '68%', width: '12%', align: 'center' },
     date: { top: '28.8%', left: '65%', width: '18%', align: 'center' },
-    customerRef: { top: '25.5%', left: '80%', width: '15%', align: 'center' },
     showroomName: { top: '37%', left: '45%', width: '58%', align: 'center', rtl: true },
+    customerPhone: { top: '40%', left: '45%', width: '58%', align: 'center', rtl: true },
+    employeeNumber: { top: '42.5%', left: '45%', width: '30%', align: 'center', rtl: true },
     customerName: { top: '79%', left: '48.5%', width: '58%', align: 'center', rtl: true },
     vehicleDescription: { top: '44%', left: '20.1%', width: '58%', align: 'center', rtl: true },
     color: { top: '46.3%', left: '28.9%', width: '40%', align: 'center', rtl: true },

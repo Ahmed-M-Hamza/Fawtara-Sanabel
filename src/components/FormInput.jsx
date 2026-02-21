@@ -237,6 +237,24 @@ function FormInput({ formData, onInputChange, onChassisAdd, onChassisRemove, onC
           />
         </div>
         <div className="form-group">
+          <label>رقم الجوال</label>
+          <input
+            type="text"
+            value={formData.customerPhone}
+            onChange={(e) => onInputChange('customerPhone', e.target.value)}
+            placeholder="يظهر في الصفحة الأولى فقط"
+          />
+        </div>
+        <div className="form-group">
+          <label>الرقم الوظيفي</label>
+          <input
+            type="text"
+            value={formData.employeeNumber}
+            onChange={(e) => onInputChange('employeeNumber', e.target.value)}
+            placeholder="يظهر في الصفحة الأولى فقط"
+          />
+        </div>
+        <div className="form-group">
           <label>جهة التعميد / اسم البنك</label>
           <input
             type="text"
@@ -325,6 +343,7 @@ function FormInput({ formData, onInputChange, onChassisAdd, onChassisRemove, onC
             type="text"
             value={formData.customerRef}
             onChange={(e) => onInputChange('customerRef', e.target.value)}
+            placeholder="يظهر في الصفحة الثانية فقط"
           />
         </div>
       </div>
@@ -484,7 +503,7 @@ function FormInput({ formData, onInputChange, onChassisAdd, onChassisRemove, onC
         >
           <div className="coordinates-header">
             <span className="coordinates-drag-handle" title="اسحب لتحريك النافذة">⋮⋮</span>
-            <h3>⚙️ ضبط إحداثيات الصفحة الثانية</h3>
+            <h3>⚙️ ضبط إحداثيات الصفحة الأولي</h3>
             <button 
               className="close-coordinates-btn"
               onClick={() => {

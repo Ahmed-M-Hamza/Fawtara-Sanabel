@@ -74,21 +74,6 @@ function PrintPage2({ formData, pricing, fields, chassisNumber, pageNumber, docu
           </div>
         )}
 
-        {/* Customer Ref / Account No */}
-        {formData.customerRef && fields?.customerRef && (
-          <div 
-            className="field"
-            style={{
-              top: fields.customerRef.top,
-              left: fields.customerRef.left,
-              width: fields.customerRef.width,
-              textAlign: fields.customerRef.align
-            }}
-          >
-            {formData.customerRef}
-          </div>
-        )}
-
         {/* Showroom Name */}
         {formData.showroomName && fields?.showroomName && (
           <div 
@@ -105,7 +90,42 @@ function PrintPage2({ formData, pricing, fields, chassisNumber, pageNumber, docu
           </div>
         )}
 
-        {/* Customer Name - اسم العميل (الصفحة الثانية فقط) */}
+        {/* Customer Phone - رقم الجوال (الصفحة الأولى فقط - اللي فوق) */}
+        {formData.customerPhone && fields?.customerPhone && (
+          <div 
+            className="field customer-phone-field"
+            style={{
+              top: fields.customerPhone.top,
+              left: fields.customerPhone.left,
+              width: fields.customerPhone.width,
+              textAlign: fields.customerPhone.align,
+              direction: fields.customerPhone.rtl ? 'rtl' : 'ltr'
+            }}
+          >
+            {formData.customerPhone}
+          </div>
+        )}
+
+        {/* Employee Number - الرقم الوظيفي (الصفحة الأولى فقط) */}
+        {formData.employeeNumber && fields?.employeeNumber && (
+          <div 
+            className="field employee-number-field"
+            style={{
+              top: fields.employeeNumber.top,
+              left: fields.employeeNumber.left,
+              width: fields.employeeNumber.width,
+              textAlign: fields.employeeNumber.align,
+              direction: fields.employeeNumber.rtl ? 'rtl' : 'ltr',
+              color: '#0e4e78',
+              fontWeight: 'bold',
+              fontSize: '0.75em'
+            }}
+          >
+            {formData.employeeNumber}
+          </div>
+        )}
+
+        {/* Customer Name - اسم العميل */}
         {formData.customerName && fields?.customerName && (
           <div 
             className="field customer-name-field"

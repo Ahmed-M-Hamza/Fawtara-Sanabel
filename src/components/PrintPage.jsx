@@ -64,7 +64,7 @@ function PrintPage({ formData, pricing, fields, chassisNumber, pageNumber, docum
           </div>
         )}
 
-        {/* Customer Ref */}
+        {/* Customer Ref - مرجع العميل (الصفحة الثانية فقط - اللي تحت) */}
         {formData.customerRef && fields?.customerRef && (
           <div 
             className="field"
